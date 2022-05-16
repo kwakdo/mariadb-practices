@@ -53,32 +53,54 @@ group by a.first_name;
    
 -- 문제5.
 -- 현재, 평균연봉이 가장 높은 부서의 사원들의 사번, 이름, 직책, 연봉을 조회하고 연봉 순으로 출력하세요.
-select d.dept_name, b.first_name, c.salary
-  from dept_emp a, employees b, salaries c, departments d  
- where a.emp_no = b.emp_no
-   and b.emp_no = c.emp_no
-   and d.dept_no = a.dept_no
-   and a.to_date = '9999-01-01'
-   and c.to_date = '9999-01-01'
-   and (a.dept_no, c.salary) in (  select a.dept_no, avg(b.salary)
-									 from dept_emp a, salaries b
-                                    where a.emp_no=b.emp_no
-                                      and a.to_date='9999-01-01'
-                                      and b.to_date='9999-01-01'
-                                 group by a.dept_no);
+select a.emp_no, a.first_name, b.title, c.salary , d.dept_no
+from employees a, titles b, salaries c, dept_emp d
+where a.emp_no = b.emp_no
+and a.emp_no= c.emp_no
+and a.emp_no=d.emp_no
+and b.to_date='9999-01-01'
+and c.to_date='9999-01-01'
+and d.dept_no =(
+	select dept_no
+	from(select b.dept_no, avg(a.salary) as avg_salary
+	from salaries a, dept_emp b
+	where a.emp_no = b.emp_no
+	and a.to_date='9999-01-01'
+	and b.to_date='9999-01-01'
+	group by b.dept_no) e
+	where y.avg_salary = (
+	select max(avg_salary)
+	from(select b.dept_no, avg(a.salary) as avg_salary
+	from salaries a, dept_emp b
+	where a.emp_no = b.emp_no
+	and b.to_date='9999-01-01'
+	and a.to_date='9999-01-01'
+	group by b.dept_no f))
+order by c.salary desc;
 
 -- 문제6.
 -- 평균 연봉이 가장 높은 부서는? 
-select dept_name, avg(salary)
-from departments a, dept_emp b,salaries c
-where a.dept_no = b.dept_no
-and b.emp_no = c.emp_no
-group by dept_name
+select a.dept_name as '부서', max(b.avg_salary) as '평균연봉'
+from departments a, 
+	(select a.dept_name 부서, avg(salary) as avg_salary
+	from departments a, dept_emp b, salaries c
+	where b.emp_no = c.emp_no
+	and a.dept_no = b.dept_no
+	and b.to_date = '9999-01-01'
+	and c.to_date = '9999-01-01'
+        group by de.dept_name) b;
 
 -- 문제7.
 -- 평균 연봉이 가장 높은 직책?
-
+select a.title, avg(a.salary), salary
+from titles a, salaries b
+where a.emp_no = b.emp_no
+group by a.title
+order by AVG(salary) desc
+limit 1;
 
 -- 문제8.
 -- 현재 자신의 매니저보다 높은 연봉을 받고 있는 직원은?
 -- 부서이름, 사원이름, 연봉, 매니저 이름, 메니저 연봉 순으로 출력합니다.
+-- select d.dept_name as '부서이름', concat(a.fitst_name, ' ', a.last_name) as '사원이름', b.salary as '연봉', concat(e.fitst_name, ' ', e.last_name) as '매니저 이름', f.salary as '매니저연봉'
+-- from employees a, salaries b, dept_emp c, departments d, employees e, salaries f
