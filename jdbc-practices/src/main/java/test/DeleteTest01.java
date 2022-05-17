@@ -40,7 +40,7 @@ public class DeleteTest01 {
 		} finally {
 			try {
 				if(stmt != null) {
-					stmt.close();
+					stmt.close();				
 				}
 				if(connection != null) {
 					connection.close();
