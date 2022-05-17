@@ -103,4 +103,8 @@ limit 1;
 -- 현재 자신의 매니저보다 높은 연봉을 받고 있는 직원은?
 -- 부서이름, 사원이름, 연봉, 매니저 이름, 메니저 연봉 순으로 출력합니다.
 -- select d.dept_name as '부서이름', concat(a.fitst_name, ' ', a.last_name) as '사원이름', b.salary as '연봉', concat(e.fitst_name, ' ', e.last_name) as '매니저 이름', f.salary as '매니저연봉'
+<<<<<<< HEAD
 -- from employees a, salaries b, dept_emp c, departments d, employees e, salaries f
+=======
+-- from employees a, salaries b, dept_emp c, departments d, employees e, salaries f
+>>>>>>> refs/remotes/origin/master
