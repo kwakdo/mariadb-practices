@@ -42,6 +42,7 @@ public class DeleteTest01 {
 				if(stmt != null) {
 					stmt.close();				
 				}
+				
 				if(connection != null) {
 					connection.close();
 				}
