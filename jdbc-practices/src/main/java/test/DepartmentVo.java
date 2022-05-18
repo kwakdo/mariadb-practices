@@ -1,6 +1,12 @@
 package test;
 
 public class DepartmentVo {
+
+	@Override
+	public String toString() {
+		
+		return super.toString();
+	}
 	private Long no;
 	private String name;
 	
