@@ -1,15 +1,9 @@
 package test;
 
 public class DepartmentVo {
-
-	@Override
-	public String toString() {
-		
-		return super.toString();
-	}
 	private Long no;
 	private String name;
-	
+
 	public Long getNo() {
 		return no;
 	}
@@ -22,6 +16,9 @@ public class DepartmentVo {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "DepartmentVo [no=" + no + ", name=" + name + "]";
+	}
 }
