@@ -13,7 +13,7 @@ public class ConnectionTest {
 			Class.forName("driver.MyDriver");
 
 			// 2. 연결하기
-			String url = "jdbc:mysql://192.168.10.55:3306/webdb?charset=utf8";
+			String url = "jdbc:mysql://192.168.10.42:3306/webdb?charset=utf8";
 			connection = DriverManager.getConnection(url, "webdb", "webdb");
 			System.out.println("Connected!");
 

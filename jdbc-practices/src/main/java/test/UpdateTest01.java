@@ -5,15 +5,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DeleteTest01 {
+public class UpdateTest01 {
 
 	public static void main(String[] args) {
-		delete(5L);
-		delete(6L);
-		delete(7L);
+		update(4L, "전략기획팀");
+
 	}
 
-	private static boolean delete(Long no) {
+	private static boolean update(long no, String name) {
 		boolean result = false;
 		Connection connection = null;
 		Statement stmt = null;
@@ -30,7 +29,8 @@ public class DeleteTest01 {
 			stmt = connection.createStatement();
 
 			// 4. SQL 실행
-			String sql = "delete from department where no = " + no;
+			String sql = "upadte department" + 
+			" set name='" + name + "'" + " where no= " + no;
 			int count = stmt.executeUpdate(sql);
 			result = count == 1;
 		} catch (ClassNotFoundException e) {
@@ -52,6 +52,7 @@ public class DeleteTest01 {
 		}
 
 		return result;
+		
 	}
 
 }
