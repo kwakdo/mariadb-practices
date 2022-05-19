@@ -61,7 +61,7 @@ group by a.first_name;
 -- 현재, 평균연봉이 가장 높은 부서의 사원들의 사번, 이름, 직책, 연봉을 조회하고 연봉 순으로 출력하세요.
 SELECT 
     a.emp_no,
-    CONCAT(a.first_name, a.last_name) name,
+    CONCAT(a.first_name, ' ', a.last_name) name,
     c.title,
     d.salary
 FROM
