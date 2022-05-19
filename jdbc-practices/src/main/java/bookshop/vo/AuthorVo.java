@@ -3,6 +3,7 @@ package bookshop.vo;
 public class AuthorVo {
 	private Long no;
 	private String name;
+	
 	public Long getNo() {
 		return no;
 	}
