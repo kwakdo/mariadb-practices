@@ -1,57 +1,43 @@
 package vo;
 
 public class CartVo {
-	private Long memberNo;
-		private String name;
-		private Long bookNo;
-		private String title;
-		private Long amount;
-		private Long price;
-		
-		public Long getMemberNo() {
-			return memberNo;
-		}
-		public void setMemberNo(Long memberNo) {
-			this.memberNo = memberNo;
-		}
-		public String getName() {
-			return name;
-		}
-		public void setName(String name) {
-			this.name = name;
-		}
-		public Long getBookNo() {
-			return bookNo;
-		}
-		public void setBookNo(Long bookNo) {
-			this.bookNo = bookNo;
-		}
-		public String getTitle() {
-			return title;
-		}
-		public void setTitle(String title) {
-			this.title = title;
-		}
-		public Long getAmount() {
-			return amount;
-		}
-		public void setAmount(Long amount) {
-			this.amount = amount;
-		}
-		public Long getPrice() {
-			return price;
-		}
-		public void setPrice(Long price) {
-			this.price = price;
-		}
-		@Override
-		public String toString() {
-			if(getTitle().length() > 10) {
-				return " " + name + "\t│\t" + title + "\t│\t" + amount + "개\t │\t" + price + "원";
-			} else {
-				return " " + name + "\t│\t\t" + title + "\t\t│\t" + amount + "개\t │\t" + price + "원";
-			}
-		}
-		
+	private long member_no;
+	private long book_no;
+	private long amount; //개수
+	private String member_name;
+	private String book_title;
+	
+	
+	public String getMember_name() {
+		return member_name;
 	}
-
+	public void setMember_name(String member_name) {
+		this.member_name = member_name;
+	}
+	public String getBook_title() {
+		return book_title;
+	}
+	public void setBook_title(String book_title) {
+		this.book_title = book_title;
+	}
+	public long getMember_no() {
+		return member_no;
+	}
+	public void setMember_no(long member_no) {
+		this.member_no = member_no;
+	}
+	public long getBook_no() {
+		return book_no;
+	}
+	public void setBook_no(long book_no) {
+		this.book_no = book_no;
+	}
+	public long getAmount() {
+		return amount;
+	}
+	public void setAmount(long amount) {
+		this.amount = amount;
+	}
+	
+	
+}

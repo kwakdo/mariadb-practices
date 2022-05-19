@@ -1,15 +1,17 @@
 package vo;
 
 public class MemberVo {
-	private Long no;
+	private long no;
 	private String name;
-	private String phone;
+	private String tel;
 	private String email;
 	private String password;
-	public Long getNo() {
+	
+	
+	public long getNo() {
 		return no;
 	}
-	public void setNo(Long no) {
+	public void setNo(long no) {
 		this.no = no;
 	}
 	public String getName() {
@@ -18,11 +20,11 @@ public class MemberVo {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPhone() {
-		return phone;
+	public String getTel() {
+		return tel;
 	}
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setTel(String tel) {
+		this.tel = tel;
 	}
 	public String getEmail() {
 		return email;
@@ -35,13 +37,5 @@ public class MemberVo {
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	@Override
-	public String toString() {
-		
-		return "    " + no + "\t│\t" + name + "\t   │\t" + phone + "\t│\t" + email;
-		}
-	
-
+	}	
 }

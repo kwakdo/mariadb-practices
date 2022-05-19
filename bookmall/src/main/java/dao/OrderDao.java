@@ -130,7 +130,7 @@ public class OrderDao {
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
 			
-			String url = "jdbc:mysql://192.168.10.42:3307/bookmall?charset=utf8";
+			String url = "jdbc:mysql://192.168.10.31:3306/bookmall?charset=utf8";
 			connection = DriverManager.getConnection(url, "bookmall", "bookmall");
 			
 		} catch (ClassNotFoundException e) {

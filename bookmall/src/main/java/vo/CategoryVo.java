@@ -2,23 +2,25 @@ package vo;
 
 public class CategoryVo {
 	private Long no;
-	private String category;
+	private String name;
+	
+	
+	@Override
+	public String toString() {
+		return "CategoryVo [no=" + no + ", name=" + name + "]";
+	}
+	
 	public Long getNo() {
 		return no;
 	}
 	public void setNo(Long no) {
 		this.no = no;
 	}
-	public String getCategory() {
-		return category;
+	public String getName() {
+		return name;
 	}
-	public void setCategory(String category) {
-		this.category = category;
-	}
-	
-	@Override
-	public String toString() {
-		return"  " + no + "  │ " + category;
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }

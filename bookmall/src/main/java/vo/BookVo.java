@@ -1,19 +1,23 @@
 package vo;
 
 public class BookVo {
-	private Long no;
-	private String title;
-	private Long price;
-	private Long categoryNo;
-	private String category;
+	private long no;
+    private String	title;
+    private String	price;
+	private long category_no;
+	private String category_name;
 	
-	public void setCategoryNo(Long categoryNo) {
-		this.categoryNo = categoryNo;
+	
+	public String getCategory_name() {
+		return category_name;
 	}
-	public Long getNo() {
+	public void setCategory_name(String category_name) {
+		this.category_name = category_name;
+	}
+	public long getNo() {
 		return no;
 	}
-	public void setNo(Long no) {
+	public void setNo(long no) {
 		this.no = no;
 	}
 	public String getTitle() {
@@ -22,34 +26,19 @@ public class BookVo {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public Long getPrice() {
+	public String getPrice() {
 		return price;
 	}
-	public void setPrice(Long price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
-	public Long getCategoryNo() {
-		return categoryNo;
+	public long getCategory_no() {
+		return category_no;
 	}
-	public void setCategory(Long categoryNo) {
-		this.categoryNo = categoryNo;
+	public void setCategory_no(long category_no) {
+		this.category_no = category_no;
 	}
-	public String getCategory() {
-		return category;
-	}
-	public void setCategory(String category) {
-		this.category = category;
-	}
-	@Override
-	public String toString() {
-		String lResult = "    " + no + "\t│\t";
-		String rResult = "\t │\t" + price + "원\t   │\t" + category;
-		String result = lResult + title + rResult;
-		
-		if(getTitle().length() < 10) {
-			result = lResult + "\t" + title + "\t" + rResult;
-		}
-		return result;
-	}
+	
+	
 	
 }
